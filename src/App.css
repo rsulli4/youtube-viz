@@ -2,6 +2,24 @@
   text-align: center;
 }
 
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  background-color: #282c34;
+  color: white;
+}
+
+.Introduction {
+  text-align: center;
+  align-content: center;
+}
+
+.InputForm {
+  text-align: center;
+  align-content: center;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
