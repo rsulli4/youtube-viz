@@ -12,14 +12,15 @@ import { VidIds } from './VidIds';
 import { json } from 'd3';
 import {VideoList} from './VideoList';
 import { Introduction } from './Introduction';
+import { ChannelSearch } from './ChannelSearch/ChannelSearch';
+import { ViewsChart } from './ViewsChart/ViewsChart';
  
 function App() {
   const AudienceDemographicsChart = useAudienceDemographicsChart;
   const AudienceRetention = useAudienceRetention;
 
-  const [apiKey, setApiKey] = useState('AIzaSyCdf2N1hM-BK04N816RGLZPpMn-Ej4wMQc');
+  const [apiKey, setApiKey] = useState('AIzaSyBBRBZAtYjQWFVJfThCsnYh0ZAaCtiTsQE');
   const [channelId, setChannelId] = useState('UCkmMACUKpQeIxN9D9ARli1Q');
-  const [vidUrl, setVidUrl] = useState('');
   const [videos, setVideos] = useState('');
   const [needFetch, setNeedFetch] = useState(false);
   const [videoData, setVideoData] = useState('');
@@ -33,17 +34,16 @@ function App() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setVidUrl(
-      'https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=' +
-        channelId +
-        '&maxResults=10&order=date&type=video&key=' +
-        apiKey
-    );
     setNeedFetch(true);
   };
 
   //fetches the data
   const fetchData = () => {
+    const vidUrl = 'https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=' +
+    channelId +
+    '&maxResults=10&order=date&type=video&key=' +
+    apiKey;
+
     json(vidUrl).then((data1) => {
       setVideos(data1);
       const vids = data1.items;
@@ -61,16 +61,16 @@ function App() {
     }
   }, [needFetch]);
 
-  console.log("videos");
-  console.log(videos);
-  // const vids = videos.items;
-  //the IDs of the videos returned
-  // console.log("video IDs: "+VidIds({vids}));
-  console.log('videoData');
-  console.log(videoData);
+  // console.log("videos");
+  // console.log(videos);
+  // // const vids = videos.items;
+  // //the IDs of the videos returned
+  // // console.log("video IDs: "+VidIds({vids}));
+  // console.log('videoData');
+  // console.log(videoData);
 
 
-  const InputForm = () =>{
+  const InputForm = useCallback(() =>{
     return <div className='InputForm'>
       <form onSubmit={handleSubmit}>
         <label>
@@ -94,12 +94,13 @@ function App() {
         <input type="submit" value="Submit" />
       </form>
     </div>
-  }
+  }, [] );
 
-  //if the data has not loaded
+  //if the data has not loaded just show the intro and the input form
   if (!videoData) {
     return <>
     <Introduction/>
+    <ChannelSearch apiKey={apiKey}/>
     <InputForm/>
   </>
   }
@@ -108,8 +109,10 @@ function App() {
   return (
     <>
     <Introduction/>
+    <ChannelSearch apiKey={apiKey}/>
     <InputForm/>
     <VideoList data = {videoData}/>
+    <ViewsChart dataIn={videoData}/>
     </>
   );
 }
