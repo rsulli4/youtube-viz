@@ -1,5 +1,6 @@
-import { Histogram } from "./Historgram";
+import { Histogram } from "./Histogram/Historgram";
 import {range} from "d3";
+import { Scatterplot } from "./scatterplot/Scatterplot";
 
 const CheckDayTime = (data, day, hour) => {
     for(let i = 0; i < data.length; i++) {
@@ -46,5 +47,6 @@ export const VideoUploads = ({dataIn}) => {
 
     return <>
         <Histogram data={hours} height={height} width={width} domain={hoursDomain} threshold={hoursThreshold}/>
+        <Scatterplot data={dayHourData}/>
     </>
 }
