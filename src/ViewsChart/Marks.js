@@ -10,7 +10,7 @@ export const Marks = ({data, xScale, yScale, yValue, xValue1, xValue2, xValue3, 
       height={yScale.bandwidth()/3}
       fill="white"
     >
-      <title>{tooltipFormat(xValue1(d))}</title>
+      <title>{tooltipFormat(xValue1(d)) + " Views"}</title>
     </rect>
     <rect
     className = "mark"
@@ -21,7 +21,7 @@ export const Marks = ({data, xScale, yScale, yValue, xValue1, xValue2, xValue3, 
     height={yScale.bandwidth()/3}
     fill="green"
     >
-    <title>{tooltipFormat(xValue2(d))}</title>
+    <title>{tooltipFormat(xValue2(d)) + " Likes"}</title>
     </rect>
 
     <rect
@@ -33,7 +33,7 @@ export const Marks = ({data, xScale, yScale, yValue, xValue1, xValue2, xValue3, 
         height={yScale.bandwidth()/3}
         fill="blue"
         >
-        <title>{tooltipFormat(xValue3(d))}</title>
+        <title>{tooltipFormat(xValue3(d)) + " Comments"}</title>
         </rect>
     </g>
   ));

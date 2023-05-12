@@ -18,12 +18,12 @@ import React, {
   const width = 960;
   const height = 500;
   const margin = {
-    top: 20,
+    top: 50,
     right: 30,
-    bottom: 65,
+    bottom: 40,
     left: 265,
   };
-  const xAxisLabelOffset = 50;
+  const xAxisLabelOffset = 10;
   const siFormat = format('.2s');
   const xAxisTickFormat = (tickValue) =>
     siFormat(tickValue).replace('G', 'B');
@@ -69,7 +69,7 @@ export const ViewsChart = ({dataIn, sliceSize}) => {
             className="axis-label"
             x={innerWidth / 2}
             textAnchor="middle"
-            y={innerHeight + xAxisLabelOffset}
+            y={-xAxisLabelOffset}
             color='white'
           >
             {' '} View Likes and Comments count {' '}
