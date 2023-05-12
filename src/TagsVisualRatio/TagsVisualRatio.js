@@ -1,7 +1,7 @@
 import { Scatterplot } from "./Scatterplot";
 
 
-export const TagsVisual = ({dataIn}) => {
+export const TagsVisualRatio = ({dataIn}) => {
 
     //checks if a tag is alreagy in the data and returns the index
     const TagExists = (tagData, tag) =>{
@@ -33,10 +33,10 @@ export const TagsVisual = ({dataIn}) => {
             const tagIndex = TagExists(data, tag);
             //if the tag is already there update it
             if(tagIndex>=0) {
-                data[tagIndex] = {tag: tag, views: data[tagIndex].views + +item.statistics.viewCount, uses: data[tagIndex].uses+1};
+                data[tagIndex] = {tag: tag, views: data[tagIndex].views + +item.statistics.viewCount, uses: data[tagIndex].uses+1, likes: data[tagIndex].likes + +item.statistics.likeCount};
             }
             else { //new tag add it
-                data.push({tag: tag, views: +item.statistics.viewCount, uses: 1});
+                data.push({tag: tag, views: +item.statistics.viewCount, uses: 1, likes: +item.statistics.likeCount});
             }    
         }
         

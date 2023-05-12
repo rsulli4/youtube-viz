@@ -1,7 +1,5 @@
 import logo from './logo.svg';
 import './App.css';
-import {useAudienceDemographicsChart} from './useAudienceDemographicsChart ';
-import {useAudienceRetention} from './useAudienceRetention';
 import { fetchVideoData } from './fetchVideoData';
 import React, {
   useEffect,
@@ -15,6 +13,8 @@ import { Introduction } from './Introduction';
 import { ChannelSearch } from './ChannelSearch/ChannelSearch';
 import { ViewsChart } from './ViewsChart/ViewsChart';
 import { TagsVisual } from './TagsVisual/TagsVisual';
+import { TagsVisualRatio } from './TagsVisualRatio/TagsVisualRatio';
+import { VideoUploads } from './VideoUploads/VideoUploads';
  
 function App() {
   const sliceSize = 10;
@@ -47,8 +47,7 @@ function App() {
     json(vidUrl).then((data1) => {
       setVideos(data1);
       const vids = data1.items;
-      return json('https://www.googleapis.com/youtube/v3/videos?id='+VidIds({vids})+'&key='+apiKey+'&part=snippet,statistics').then((data2 =>{
-
+      return json('https://www.googleapis.com/youtube/v3/videos?id='+VidIds({vids})+'&key='+apiKey+'&part=snippet,statistics,contentDetails').then((data2 =>{
         setVideoData(data2);
         return data2;
       }));
@@ -115,6 +114,8 @@ function App() {
     <VideoList dataIn = {videoData} sliceSize={sliceSize}/>
     <ViewsChart dataIn={videoData} sliceSize={sliceSize}/>
     <TagsVisual dataIn={videoData}/>
+    <TagsVisualRatio dataIn={videoData}/>
+    <VideoUploads dataIn={videoData}/>
     </>
   );
 }
