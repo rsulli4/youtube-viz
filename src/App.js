@@ -14,10 +14,10 @@ import {VideoList} from './VideoList';
 import { Introduction } from './Introduction';
 import { ChannelSearch } from './ChannelSearch/ChannelSearch';
 import { ViewsChart } from './ViewsChart/ViewsChart';
+import { TagsVisual } from './TagsVisual/TagsVisual';
  
 function App() {
-  const AudienceDemographicsChart = useAudienceDemographicsChart;
-  const AudienceRetention = useAudienceRetention;
+  const sliceSize = 10;
 
   const [apiKey, setApiKey] = useState('AIzaSyBBRBZAtYjQWFVJfThCsnYh0ZAaCtiTsQE');
   const [channelId, setChannelId] = useState('UCkmMACUKpQeIxN9D9ARli1Q');
@@ -41,13 +41,14 @@ function App() {
   const fetchData = () => {
     const vidUrl = 'https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=' +
     channelId +
-    '&maxResults=10&order=date&type=video&key=' +
+    '&maxResults=50&order=date&type=video&key=' +
     apiKey;
 
     json(vidUrl).then((data1) => {
       setVideos(data1);
       const vids = data1.items;
       return json('https://www.googleapis.com/youtube/v3/videos?id='+VidIds({vids})+'&key='+apiKey+'&part=snippet,statistics').then((data2 =>{
+
         setVideoData(data2);
         return data2;
       }));
@@ -111,8 +112,9 @@ function App() {
     <Introduction/>
     <ChannelSearch apiKey={apiKey}/>
     <InputForm/>
-    <VideoList data = {videoData}/>
-    <ViewsChart dataIn={videoData}/>
+    <VideoList dataIn = {videoData} sliceSize={sliceSize}/>
+    <ViewsChart dataIn={videoData} sliceSize={sliceSize}/>
+    <TagsVisual dataIn={videoData}/>
     </>
   );
 }

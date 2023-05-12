@@ -1,9 +1,9 @@
 export const Marks = ({data, xScale, yScale, yValue, xValue1, xValue2, xValue3, tooltipFormat}) =>
   data.map((d) => (
-    <g>
+    <g key={d.id}>
     <rect
       className = "mark"
-      key={d}
+      key={d.id+"views"}
       x={0}
       y={yScale(yValue(d))}
       width={xScale(xValue1(d))}
@@ -14,7 +14,7 @@ export const Marks = ({data, xScale, yScale, yValue, xValue1, xValue2, xValue3, 
     </rect>
     <rect
     className = "mark"
-    key={d}
+    key={d.id+"likes"}
     x={0}
     y={yScale(yValue(d)) + yScale.bandwidth()/3}
     width={xScale(xValue2(d))}
@@ -26,7 +26,7 @@ export const Marks = ({data, xScale, yScale, yValue, xValue1, xValue2, xValue3, 
 
     <rect
         className = "mark"
-        key={d}
+        key={d.id+"comments"}
         x={0}
         y={yScale(yValue(d)) +2 * yScale.bandwidth()/3}
         width={xScale(xValue3(d))}
