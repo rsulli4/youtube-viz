@@ -36,8 +36,6 @@ export const VideoUploads = ({dataIn}) => {
         }
         
     }
-    
-    console.log(dayHourData);
 
     const width = 960;
     const height = 500;

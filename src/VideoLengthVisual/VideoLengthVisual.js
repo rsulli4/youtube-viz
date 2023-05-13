@@ -1,27 +1,36 @@
+import { timeFormat } from "d3";
+import { Scatterplot } from "./Scatterplot";
+
+const runRegEx = (regEx, data) =>{
+    const out = regEx.exec(data);
+    if(out){
+        return +out[0].slice(0,-1);
+    }
+    return 0//
+}
+
 //used to parse out the PT\d*H\d*M\d*S
 const ParseDuration = (data) => {
     const minReg = /\d+M/
     const hourReg = /\d+H/
     const secReg = /\d+S/
-    // console.log(data[0]);
-    // const min =minReg.exec(data)[0].slice(0,-1);
-    // const hour= hourReg.exec(data)[0];
-    // const sec =secReg.exec(data)[0];
-
-    // console.log(min);
-    // console.log(hour);
-    // console.log(sec);
-    // var duration = new Date(data);
-    return 0;
+    const min = runRegEx(minReg,data);
+    const hour = runRegEx(hourReg,data);
+    const sec = runRegEx(secReg,data);
+    var duration = new Date(0,0,0,hour,min,sec,0);
+    return duration;
 }
 
 export const VideoLengthVisual = ({dataIn}) =>{
     const data = dataIn.items;
-    console.log(data)
-    let videoDurationData = [];
-    console.log(ParseDuration(data[0].contentDetails.duration))
-    // for(let i = 0; i < data.length; i++) {
-    //     videoDurationData.push({id:data[i].id, duration: })
-    // }
-    return <></>
+    var videoDurationData = [];
+    for(let i = 0; i < data.length; i++) {
+        videoDurationData.push({id:data[i].id, duration: ParseDuration(data[i].contentDetails.duration), 
+            views: data[i].statistics.viewCount,
+            likes: data[i].statistics.likeCount,
+            comments: data[i].statistics.commentCount,
+            videoTitle: data[i].snippet.title})
+    }
+    
+    return <Scatterplot data={videoDurationData}/>
 }
