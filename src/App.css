@@ -15,10 +15,9 @@ body {
   text-align: center;
   align-content: center;
 }
-
-.InputForm {
-  /* text-align: center; */
-  /* align-content: center; */
+.IntroText {
+  text-align: left;
+  align-content: left;
 }
 
 .App-logo {
