@@ -55,7 +55,6 @@ const titleOffset = -15;
   });
 
   return (
-    <div>
       <svg width={width} height={height}>
       <g transform={`translate(${margin.left},${margin.top})`}>
         {/* <AxisBottom
@@ -97,6 +96,5 @@ const titleOffset = -15;
 
         </g>
       </svg>
-    </div>
   );
 };
