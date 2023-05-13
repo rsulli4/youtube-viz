@@ -1,0 +1,278 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:106%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+a:link, span.MsoHyperlink
+	{color:#0563C1;
+	text-decoration:underline;}
+p
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+.MsoChpDefault
+	{font-size:10.0pt;
+	font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:106%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body bgcolor="#282C34" lang=EN-US link="#0563C1" vlink="#954F72"
+style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p align=center style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:55.0pt;text-align:center;background:#282C34;vertical-align:baseline'><b><span
+style='font-size:18.0pt;color:white'>YouTube Data Analysis Dashboard</span></b></p>
+
+<p align=center style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:55.0pt;text-align:center;background:#282C34;vertical-align:baseline'><b><span
+style='font-size:14.0pt;color:white'>Ryan Sullivan, Huldah Merlin Kolli</span></b></p>
+
+<p align=center style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:55.0pt;text-align:center;background:#282C34;vertical-align:baseline'><b><span
+style='color:white'><a href="/youtube-viz">Back To Application</a></span></b></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:55.0pt;
+background:#282C34;vertical-align:baseline'><b><span style='color:white'>&nbsp;</span></b></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:55.0pt;
+background:#282C34;vertical-align:baseline'><b><span style='color:white'>Introduction:</span></b></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:1.0in;
+text-indent:-.25in;background:#282C34;vertical-align:baseline'><span
+style='font-size:10.0pt;font-family:"Courier New";color:white'>o</span><span
+style='font-size:7.0pt;color:white'>&nbsp;&nbsp; </span><b><u><span
+style='color:white'>Problem Statement:</span></u></b><span style='color:white'>
+The main goal is to bring more advanced analytics to the average YouTube user
+through use of Visualizations.&nbsp;</span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:1.0in;
+text-indent:-.25in;background:#282C34;vertical-align:baseline'><span
+style='font-size:10.0pt;font-family:"Courier New";color:white'>o</span><span
+style='font-size:7.0pt;color:white'>&nbsp;&nbsp; </span><u><span
+style='color:white'>Impact</span></u><span style='color:white'>: This is important
+for the average user or aspiring content creator to visualize other popular
+channels and give access to information not readily available to people outside
+of the channel owners.</span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:55.0pt;
+background:#282C34;vertical-align:baseline'><b><span style='color:white'>Background:</span></b><span
+style='color:white'> Google provides a robust set of API tools which allow software
+developers to access their data provided. The usage of this requires in-depth
+knowledge of API tools and most of this information is not available to or is
+restricted outside of these API’s. </span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:55.0pt;
+background:#282C34;vertical-align:baseline'><b><span style='color:white'>Method:
+</span></b><span style='color:white'>We pull the data from the API and then
+using a react application create a visual dashboard of this data for specific
+channels which provides visualizations for several data points not readily
+available normally.</span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:55.0pt;
+background:#282C34;vertical-align:baseline'><b><span style='color:white'>Methodology:</span></b></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:1.0in;
+text-indent:-.25in;background:#282C34;vertical-align:baseline'><span
+style='font-size:10.0pt;font-family:"Courier New";color:white'>o</span><span
+style='font-size:7.0pt;color:white'>&nbsp;&nbsp; </span><b><u><span
+style='color:white'>Research Question(s)</span></u></b><span style='color:white'>:
+How can we improve access to YouTube data and leverage existing APIs to create
+a dashboard with more robust YouTube analytics.&nbsp;</span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:1.0in;
+text-indent:-.25in;background:#282C34;vertical-align:baseline'><span
+style='font-size:10.0pt;font-family:"Courier New";color:white'>o</span><span
+style='font-size:7.0pt;color:white'>&nbsp;&nbsp; </span><b><u><span
+style='color:white'>Data Collection Process</span></u></b><span
+style='color:white'>: The Data all comes Directly from YouTube’s Data V3 API
+which allows us to pull accurate real time data directly from the source.</span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:1.0in;
+text-indent:-.25in;background:#282C34;vertical-align:baseline'><span
+style='font-size:10.0pt;font-family:"Courier New";color:white'>o</span><span
+style='font-size:7.0pt;color:white'>&nbsp;&nbsp; </span><b><u><span
+style='color:white'>Data Analysis Process</span></u></b><span style='color:
+white'>: We used the data to visualize various metrics for YouTube channels.
+This was mainly done using react and D3 in order to build a webpage and create
+several visualizations that we could display on the page.</span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:55.0pt;
+background:#282C34;vertical-align:baseline'><b><span style='color:white'>Results
+and Findings:</span></b></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:1.0in;
+text-indent:-.25in;background:#282C34;vertical-align:baseline'><span
+style='font-size:10.0pt;font-family:"Courier New";color:white'>o</span><span
+style='font-size:7.0pt;color:white'>&nbsp;&nbsp; </span><span style='color:
+white'>The dashboard successfully retrieves the recent 10 videos from any
+channel selected and visualizes key metrics for that channel, including view
+counts, likes, comments, and demographics.</span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:1.0in;
+text-indent:-.25in;background:#282C34;vertical-align:baseline'><span
+style='font-size:10.0pt;font-family:"Courier New";color:white'>o</span><span
+style='font-size:7.0pt;color:white'>&nbsp;&nbsp; </span><span style='color:
+white'>The code for the YouTube Data Analysis Dashboard can be found on GitHub
+at GitHub Repository. (This repository contains the source code for the React
+application that fetches data from the YouTube API and visualizes it using
+D3.js)</span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:1.0in;
+text-indent:-.25in;background:#282C34;vertical-align:baseline'><span
+style='font-size:10.0pt;font-family:"Courier New";color:white'>o</span><span
+style='font-size:7.0pt;color:white'>&nbsp;&nbsp; </span><span style='color:
+white'>The following are JavaScript-based interactive visualizations that were
+implemented in the YouTube Data Analysis Dashboard.</span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:1.0in;
+text-indent:-.25in;background:#282C34;vertical-align:baseline'><span
+style='font-size:10.0pt;font-family:"Courier New";color:white'>o</span><span
+style='font-size:7.0pt;color:white'>&nbsp;&nbsp; </span><span style='color:
+white'>Users can gain a comprehensive understanding of channel performance and
+audience characteristics through interactive visualizations.</span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:1.0in;
+text-indent:-.25in;background:#282C34;vertical-align:baseline'><span
+style='font-size:10.0pt;font-family:"Courier New";color:white'>o</span><span
+style='font-size:7.0pt;color:white'>&nbsp;&nbsp; </span><span style='color:
+white'>Also, this dashboard enhances access to YouTube data and empowers users
+to make informed decisions regarding content creation, audience engagement, and
+channel growth strategies.</span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:55.0pt;
+background:#282C34;vertical-align:baseline'><b><span style='color:white'>The
+implication of your work/Conclusion:</span></b></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:1.0in;
+background:#282C34;vertical-align:baseline'><span style='color:white'>The
+implications of this project are significant for several groups of people, and
+it benefits a wide range of users and help them make more data-driven decisions
+in regard to their YouTube content and engagement.</span></p>
+
+<p style='margin-left:1.5in;text-indent:-.25in;background:#282C34;vertical-align:
+baseline'><span style='color:white'>1.</span><span style='font-size:7.0pt;
+color:white'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span style='color:white'>Benefits-
+Content creators: identifying the kind of content to create and how to better
+engage with their audience. Marketers and advertisers: identifying potential
+influencers to work with or target their ads more effectively. Average YouTube
+user: This can help users make more informed decisions about what channels to
+follow and what content to watch.</span></p>
+
+<p style='margin-left:1.5in;text-indent:-.25in;background:#282C34;vertical-align:
+baseline'><span style='color:white'>2.</span><span style='font-size:7.0pt;
+color:white'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span style='color:white'>Possible
+future directions: Adding more visualizations and metrics, integrating social
+media metrics and analytics, building recommendation systems to suggest
+channels and videos.</span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:1.5in;
+text-indent:-.25in;background:#282C34;vertical-align:baseline'><span
+style='color:white'>3.</span><span style='font-size:7.0pt;color:white'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='color:white'>Limitations: Technical capabilities of the
+developer and the tools used, advanced analytics may require additional data
+sources and statistical analysis. There are also limitations with YouTube’s
+APIs as the data API has limited metrics it returns and the analytics API is
+restricted to channels you own, cutting off access to higher quality metrics
+and data.</span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:1.5in;
+text-indent:-.25in;background:#282C34;vertical-align:baseline'><span
+style='color:white'>4.</span><span style='font-size:7.0pt;color:white'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='color:white'>Final remarks: This project demonstrates the
+potential of using YouTube's Data API to provide more advanced analytics and
+provides a starting point for further exploration and development in this
+field.</span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:55.0pt;
+background:#282C34;vertical-align:baseline'><b><span style='color:white'>Acknowledgments
+(if applicable): </span></b></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:1.0in;
+text-indent:-.25in;background:#282C34;vertical-align:baseline'><span
+style='font-size:10.0pt;font-family:"Courier New";color:white'>o</span><span
+style='font-size:7.0pt;color:white'>&nbsp;&nbsp; </span><span style='color:
+white'>The open-source community for creating and maintaining the various
+libraries and frameworks used in this project, including React, D3, and GitHub.
+</span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:55.0pt;
+background:#282C34;vertical-align:baseline'><b><span style='color:white'>References:
+</span></b></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:1.0in;
+background:#282C34;vertical-align:baseline'><span style='color:white'>Google.
+(n.d.). YouTube Data API. Retrieved May 12, 2023, from <a
+href="https://developers.google.com/youtube/v3/"><span style='color:white'>https://developers.google.com/youtube/v3/</span></a>
+</span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:1.0in;
+background:#282C34;vertical-align:baseline'><span style='color:white'>D3.js.
+(n.d.). Retrieved May 12, 2023, from <a href="https://d3js.org/"><span
+style='color:white'>https://d3js.org/</span></a> </span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:1.0in;
+background:#282C34;vertical-align:baseline'><span style='color:white'>React.
+(n.d.). Retrieved May 12, 2023, from <a href="https://reactjs.org/"><span
+style='color:white'>https://reactjs.org/</span></a></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:1.0in;
+background:#282C34;vertical-align:baseline'><i><span style='color:white'>Quickstart
+for GitHub Pages</span></i><span style='color:white'>. (n.d.). GitHub Docs.
+Retrieved May 10, 2023, from <a
+href="https://docs.github.com/en/pages/quickstart"><span style='color:white'>https://docs.github.com/en/pages/quickstart</span></a></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:1.0in;
+background:#282C34;vertical-align:baseline'><span style='color:white'>Holtz, Y.
+(n.d.).&nbsp;<i>How to build a histogram with React and D3.</i>&nbsp;Www.react-Graph-Gallery.com.
+Retrieved May 12, 2023, from https://www.react-graph-gallery.com/histogram</span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:55.0pt;
+background:#282C34;vertical-align:baseline'><b><span style='color:white'>Supplementary
+Materials:</span></b></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:55.0pt;
+text-indent:17.0pt;background:#282C34;vertical-align:baseline'><span
+style='color:white'>Code Repository : Github <a
+href="https://github.com/rsulli4/youtube-viz/tree/master"><span
+style='color:white'>https://github.com/rsulli4/youtube-viz/tree/master</span></a>
+</span></p>
+
+<p class=MsoNormal style='background:#282C34'><span style='font-size:10.0pt;
+line-height:106%;font-family:"Times New Roman",serif;color:white'>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>
