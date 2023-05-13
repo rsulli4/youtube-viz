@@ -10,7 +10,7 @@ export const Histogram = ({ width, height, data, domain, threshold }) => {
   const margin = {
     top: 60,
     right: 30,
-    bottom: 50,
+    bottom: 70,
     left: 90,
   };
 const xAxisLabelOffset = 50;

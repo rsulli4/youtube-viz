@@ -15,6 +15,7 @@ import { ViewsChart } from './ViewsChart/ViewsChart';
 import { TagsVisual } from './TagsVisual/TagsVisual';
 import { TagsVisualRatio } from './TagsVisualRatio/TagsVisualRatio';
 import { VideoUploads } from './VideoUploads/VideoUploads';
+import { VideoLengthVisual } from './VideoLengthVisual/VideoLengthVisual';
  
 function App() {
   const sliceSize = 10;
@@ -100,8 +101,15 @@ function App() {
   if (!videoData) {
     return <>
     <Introduction/>
-    <ChannelSearch apiKey={apiKey}/>
-    <InputForm/>
+    <h3>Channel Search Utility</h3>
+    <div className='channelSearch'>
+      <ChannelSearch apiKey={apiKey}/>
+    </div>
+    <h3>Channel ID input</h3>
+    <div className='ChannelIDInput'>
+      <InputForm/>
+    </div>
+    
   </>
   }
 
@@ -109,13 +117,23 @@ function App() {
   return (
     <>
     <Introduction/>
-    <ChannelSearch apiKey={apiKey}/>
-    <InputForm/>
-    <VideoList dataIn = {videoData} sliceSize={sliceSize}/>
-    <ViewsChart dataIn={videoData} sliceSize={sliceSize}/>
-    <TagsVisual dataIn={videoData}/>
-    <TagsVisualRatio dataIn={videoData}/>
-    <VideoUploads dataIn={videoData}/>
+    <h3>Channel Search Utility</h3>
+    <div className='channelSearch'>
+      <ChannelSearch apiKey={apiKey}/>
+    </div>
+    <h3>Channel ID input</h3>
+    <div className='ChannelIDInput'>
+      <InputForm/>
+    </div>
+    <h3>Visualizations</h3>
+    <div className='visualizations'>
+      <VideoList dataIn = {videoData} sliceSize={sliceSize}/>
+      <ViewsChart dataIn={videoData} sliceSize={sliceSize}/>
+      <TagsVisual dataIn={videoData}/>
+      <TagsVisualRatio dataIn={videoData}/>
+      <VideoUploads dataIn={videoData}/>
+      <VideoLengthVisual dataIn={videoData}/>
+    </div>
     </>
   );
 }

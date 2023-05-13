@@ -31,7 +31,7 @@ export const Marks = ({data, xScale, yScale, yValue, xValue1, xValue2, xValue3, 
         y={yScale(yValue(d)) +2 * yScale.bandwidth()/3}
         width={xScale(xValue3(d))}
         height={yScale.bandwidth()/3}
-        fill="blue"
+        fill="cyan"
         >
         <title>{tooltipFormat(xValue3(d)) + " Comments"}</title>
         </rect>

@@ -61,7 +61,9 @@ export const ChannelSearch = (apiKey) => {
 
     return <>
     <InputForm/>
-    <ChannelResultsTable/>
+    <div className="channelResultsTable">
+        <ChannelResultsTable/>
+    </div>
     </>
     
 }

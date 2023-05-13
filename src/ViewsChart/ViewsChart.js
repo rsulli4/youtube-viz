@@ -14,12 +14,13 @@ import React, {
   import { AxisBottom } from './AxisBottom';
   import { AxisLeft } from './AxisLeft';
   import { Marks } from './Marks';
+  import { Legend } from './Legend';
   
   const width = 960;
   const height = 500;
   const margin = {
     top: 50,
-    right: 30,
+    right: 80,
     bottom: 40,
     left: 265,
   };
@@ -27,6 +28,8 @@ import React, {
   const siFormat = format('.2s');
   const xAxisTickFormat = (tickValue) =>
     siFormat(tickValue).replace('G', 'B');
+
+  const legendOffset = 20;
   
 export const ViewsChart = ({dataIn, sliceSize}) => {
     const data = dataIn.items.slice(0,sliceSize);
@@ -85,6 +88,12 @@ export const ViewsChart = ({dataIn, sliceSize}) => {
             xValue3={xValue3}
             tooltipFormat={xAxisTickFormat}
           />
+
+          <Legend nameArray={['views', 'likes', 'comments']} 
+          colorArray={['white', 'green', 'cyan']} 
+          offset={legendOffset} 
+          width={innerWidth} 
+          height={innerHeight}/>
         </g>
       </svg>
     );
