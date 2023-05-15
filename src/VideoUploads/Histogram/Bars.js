@@ -10,7 +10,7 @@ buckets.map((bucket, i) => {
         y={yScale(bucket.length)}
         height={height - yScale(bucket.length)}
       >
-        <title>{"hour: "+bucket.x1+" times uploaded: "+bucket.length}</title>
+        <title>{"hour: "+bucket.x0+" times uploaded: "+bucket.length}</title>
       </rect>
     );
   });
