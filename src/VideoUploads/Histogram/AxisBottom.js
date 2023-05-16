@@ -7,7 +7,6 @@ threshold.map((tickValue) => (
       dy=".32em"
       y={innerHeight + 10}
       style={{ textAnchor: 'middle' }}
-      x="-10"
     >
       {tickValue}
     </text>
