@@ -21,7 +21,7 @@ function App() {
   const sliceSize = 10;
 
   const [apiKey, setApiKey] = useState('AIzaSyBBRBZAtYjQWFVJfThCsnYh0ZAaCtiTsQE');
-  const [channelId, setChannelId] = useState('UCkmMACUKpQeIxN9D9ARli1Q');
+  const [channelId, setChannelId] = useState('UCRHXUZ0BxbkU2MYZgsuFgkQ');
   const [videos, setVideos] = useState('');
   const [needFetch, setNeedFetch] = useState(false);
   const [videoData, setVideoData] = useState('');
